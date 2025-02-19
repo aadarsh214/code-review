@@ -5,6 +5,6 @@ module.exports.getResponse = async(req , res) => {
     if(!prompt){
         return res.status(400).send('Prompt is required')
     }
-    const response = await aiService(prompt)
-    res.send({ response })
+    const response = await aiService.generateContent(prompt);
+    res.send(response)
 }
